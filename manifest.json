@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "YM ext",
+  "description": "desc",
+  "version": "1.0.0",
+  "browser_action" : {
+    "default_title" : "YM ext", //Текст, всплывающий при наведении курсора на иконку
+    //"default_icon" : "img/icon.png", //Иконка для панели расширений
+    "default_popup" : "popup.html" //Всплывающее окно при клике на иконке
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }, 
+  "content_scripts" : [{
+    "js" : ["main.js"],
+    "matches": ["*://radio.yandex.ru/*"]
+  }],
+  "offline_enabled" : false
+  //"permissions": [""]
+}
